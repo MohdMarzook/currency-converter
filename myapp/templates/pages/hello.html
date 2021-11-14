@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{%static 'css/custom.css'%}">
+        <title>Currency converter</title>
+    </head>
+    <body>
+        <div class="topbg">
+            
+        </div>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{%static 'images/poto.png'%}" alt="logo"></a>
+            </div>
+            <div class="navbaritems">
+                <a href="#"><i></i><span>About</span></a>
+                <a href="https://mohamedmarzook.herokuapp.com/"><i></i><span>My Page</span></a>
+            </div>
+        </div>
+        
+        <!--navbar end-->
+        
+        <div class="continer">
+            <div class="disclaimer">
+                <p>Disclimer the amount you see that is converted is not 100% to the real market</p>
+            </div>
+            <div class="formcard">
+            <form class="hellothere" action="" id="mainform" method="post">
+                <div class="content">
+                    {% csrf_token %}
+                    <label for="amount">Amount</label>
+                    <input type="text" name="currencytoconvert" id="currency-to-convert" autocomplete="off">
+                    <div></div>
+                    <label for="amount">From</label>
+                    <select name="countrycodefrom" >
+                        {% for i,j in list.items %}
+                        <option value="{{ i }}">{{ i }} - {{ j }}</option>
+                        {% endfor %}
+                    </select>
+                    <div></div>
+                    <div></div>
+                    <div> _ </div>
+                    <div></div>
+                    <label for="amount">To</label>
+                    <select name="countrycodeto">
+                        {% for i,j in list.items %}
+                        <option value="{{ i }}">{{ i }} - {{ j }}</option>
+                        {% endfor %}
+                    </select>   
+                    <div></div>
+                </div>
+                
+                <div class="select-btn">
+                    <div class="results">
+                        <p>{{ togive.2 }} {{ togive.6 }} = </p>
+                        <p>    {{togive.5}} {{togive.7}}  </p>
+                        {{togive.8}}
+                    </div>
+                    <input type="submit" value="Select">
+                </div>
+            </form>
+            </div>
+        </div>
+        <div class="bottompart">
+            <div class="summa">
+                convertion rate for the currency:
+            </div>
+            <div class="summa2">
+                <h3>1 {{ togive.0 }} = {{ togive.3 }} {{ togive.1 }}</h3>
+                <h3>1 {{ togive.1 }} = {{ togive.4 }} {{ togive.0 }}</h3>
+            </div>
+        </div>
+        <div class="apiprovider">
+            data provided by exchangerate.host api
+        </div>
+    </body>
+</html>

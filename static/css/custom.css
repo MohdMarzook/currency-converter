@@ -1,0 +1,177 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    margin: 0;
+    padding: 0;
+}
+
+/* nav bar starts here */
+
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: capitalize;
+
+    float: left;
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 0px 0px;
+    text-decoration: none;
+}
+.logo{
+    display: block;
+    align-items: center;
+    padding-top: 5px;
+    padding-left: 20px;
+    size: 18px;
+
+}
+.navbaritems{
+    padding-right: 15px;
+}
+.navbar .navbaritems a{
+    color: #fff;
+    width: 100%;
+    line-height: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    padding-left: 30px;
+
+}
+
+/* nav bar ends here */
+.topbg{
+    z-index:-1;
+    position: relative;
+    background-color: rgb(0, 225, 255);
+    padding-bottom: 300px;
+
+}
+input[type=text], select {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid rgb(204, 204, 204);
+    color: rgb(29, 29, 29);
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 37px;
+    background: none;
+    box-shadow: 0px 3px 20px rgba(160, 160, 160, 0.705);
+}
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+.content {
+    display: grid;
+    gap: 14px 16px;
+    grid-auto-flow: column;
+    grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) auto minmax(100px, 1fr);
+    grid-template-rows: auto [input-row-start] auto [input-row-end] auto;
+    justify-items: start;
+}
+
+
+.continer{
+    z-index: 4;
+    margin-top: -250px;
+    text-align: center;
+    padding: 50px 50px 0px 50px;
+    position: relative;
+}
+.select-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.formcard{
+    border-radius: 20px;
+    padding: 70px ;
+    padding-bottom: 0px;
+    background-color:rgb(247, 247, 247);
+    box-shadow:20px 10px 50px rgb(131, 131, 131);
+}
+.bottompart{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 0px;
+
+}
+
+
+/* for small screens */
+@media screen and (max-width: 600px)
+{
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px 16px;
+    }
+    .formcard{
+        padding: 30px;
+        padding-bottom: 15px;
+    }
+    .continer{
+        padding: 20px 30px 0px 30px;
+    }
+    .select-btn{
+        padding-top: 15px;
+    }
+    .summa{
+        font-size: 18px;
+        width: 30%;
+    }
+    .summa2{
+        font-size: 15px;
+    }
+}
+@media only screen and (min-width: 992px){
+    .continer{
+        padding: 20px 100px 0px 100px;
+        margin-top: -220px;
+        font-size: 16px;
+    }
+    .topbg{
+        padding-bottom: 330px;
+    }
+    .formcard{
+        padding-left: 90px;
+        padding-right: 90px;
+        padding-bottom: 30px;
+    }
+    .bottompart{
+        font-size: 20px;
+    }
+    input[type=text], select,input[type=submit]{
+        font-size: 18px;
+    }
+
+}
+.apiprovider{
+    display: flex;
+    justify-content: flex-end;
+    color: rgb(168, 168, 168);
+    font-size: 14px;
+}
