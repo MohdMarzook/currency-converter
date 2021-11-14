@@ -32,8 +32,7 @@ def converter(this='AED', to='INR', amount='1',thisname='',toname=''):
         return moneydata
     url = f'https://api.exchangerate.host/convert?from={this}&to={to}&amount={amount}'
     try:
-        with urllib.request.urlopen(url) as response:
-            response = response
+        response = urllib.request.urlopen(url)
     except:
         moneydata = {0:this,1:this,2:'1',3:"1",4:'1',5:'1',6:thisname,7:thisname,8:'SOMETHING WENT WORNG \nTRY AGAIN LATER'}
         return moneydata
