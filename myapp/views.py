@@ -7,7 +7,9 @@ from django.template.defaulttags import register
 
 
 
-
+def ads(request):
+    return render(request,"pages/ads.txt") 
+     
 
 # Create your views here.
 def index(request):
